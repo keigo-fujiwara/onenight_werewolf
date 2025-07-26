@@ -254,7 +254,6 @@ config = {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="height=device-height, initial-scale=1.0">
     <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes"/>
 
     <link rel="prefetch" href="https://pygame-web.github.io/archives/0.9/pythonrc.py">
     <link rel="prefetch" href="https://pygame-web.github.io/archives/0.9/vt/xterm.js">
@@ -485,24 +484,6 @@ frameborder="1"
     }
 
     </script>
-    <script>
-const canvas = document.getElementById('canvas');
-
-// iPhone / Android のタップを mousedown に変換
-document.addEventListener('touchstart', function(e) {
-    e.preventDefault(); // スクロール防止
-    const rect = canvas.getBoundingClientRect();
-    const x = e.touches[0].clientX - rect.left;
-    const y = e.touches[0].clientY - rect.top;
-    window.dispatchEvent(new MouseEvent('mousedown', {clientX: x, clientY: y}));
-});
-
-// タップを mouseup に変換（指を離したとき）
-document.addEventListener('touchend', function(e) {
-    e.preventDefault();
-    window.dispatchEvent(new MouseEvent('mouseup'));
-});
-</script>
 
 
 </body>
