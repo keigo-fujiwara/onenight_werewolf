@@ -489,7 +489,7 @@ frameborder="1"
 const canvas = document.getElementById('canvas');
 
 // iPhone / Android のタップを mousedown に変換
-canvas.addEventListener('touchstart', function(e) {
+document.addEventListener('touchstart', function(e) {
     e.preventDefault(); // スクロール防止
     const rect = canvas.getBoundingClientRect();
     const x = e.touches[0].clientX - rect.left;
@@ -498,7 +498,7 @@ canvas.addEventListener('touchstart', function(e) {
 });
 
 // タップを mouseup に変換（指を離したとき）
-canvas.addEventListener('touchend', function(e) {
+document.addEventListener('touchend', function(e) {
     e.preventDefault();
     window.dispatchEvent(new MouseEvent('mouseup'));
 });
